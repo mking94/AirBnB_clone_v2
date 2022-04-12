@@ -16,12 +16,12 @@ class HBNBCommand(cmd.Cmd):
     """ Contains the functionality for the HBNB console"""
 
     # determines prompt for interactive/non-interactive modes
-    prompt = '(hbnb) ' if sys.__stdin__.isatty() else ''
+    prompt = '(hbnb) '
 
-    classes = {
-               'BaseModel': BaseModel, 'User': User, 'Place': Place,
-               'State': State, 'City': City, 'Amenity': Amenity,
-               'Review': Review
+    __classes = {
+               'BaseModel', 'User', 'Place',
+               'State', 'City', 'Amenity',
+               'Review':
               }
     dot_cmds = ['all', 'count', 'show', 'destroy', 'update']
     types = {
