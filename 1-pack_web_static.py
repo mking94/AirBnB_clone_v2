@@ -9,8 +9,7 @@ from os.path import isdir, exists
 
 def do_pack:
     """ generates a tgz archive """
-
-    dt = datetime.utcnow()
+    
     dt_str = datetime.now().strftime("%Y%m%d%H%M%S")
     filepath = "versions/web_static_{}.tgz".format(dt_str)
     if isdir("versions") is False:
