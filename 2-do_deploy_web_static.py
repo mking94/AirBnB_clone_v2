@@ -17,7 +17,7 @@ def deploy(archive_path):
         extension = file_n.split(".")[0]
         p = "/data/web_static/releases/"
         put(archive_path, '/tmp/')
-        run('mkdir -p {}{}/'.format(p, no_ext))
+        run('mkdir -p {}{}/'.format(p, extension))
         run('tar -xzf /tmp/{} -C {}{}/'.format(file_name, p, extension))
         run('rm /tmp/{}'.format(file_name))
         run('mv {0}{1}/web_static/* {0}{1}/'.format(p, extension))
