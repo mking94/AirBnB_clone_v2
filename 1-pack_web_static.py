@@ -6,7 +6,6 @@ from os.path import isdir ,exists
 
 
 def do_pack:
-    local("mkdir -p versions")
     dt = datetime.utcnow()
     filepath = "versions/web_static_{}{}{}{}{}{}.tgz".format(dt.year,
                                                              dt.month,
