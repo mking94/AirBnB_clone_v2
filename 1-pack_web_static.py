@@ -7,14 +7,12 @@ from fabric.api import local
 from os.path import isdir, exists
 
 
-def do_pack:
-    """ generates a tgz archive """
-    
-    dt_str = datetime.now().strftime("%Y%m%d%H%M%S")
-    filepath = "versions/web_static_{}.tgz".format(dt_str)
-    if isdir("versions") is False:
-        local("mkdir versions")
-    local("tar -cvzf {} web_static".format(filepath))
-    if exists(filepath):
-        return filepath
-    return None
+def do_pack():
+    """Function to compress files"""
+    local("mkdir -p versions")
+    file = local("tar -cvzf versions/web_static_{}.tgz web_static"
+                   .format(datetime.strftime(datetime.now(), "%Y%m%d%H%M%S")),
+                   capture=True)
+    if result.failed:
+        return None
+    return file
