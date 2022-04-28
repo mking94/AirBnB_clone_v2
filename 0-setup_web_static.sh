@@ -7,7 +7,7 @@ then
 fi
 sudo mkdir -p /data/web_static/releases/test/
 sudo mkdir /data/web_static/shared
-sudo echo -e "<html>\n<head>\n<title>index</title>\n</head>\n<body>\nHolberton School\n</body>\n</html>" > /data/web_static/releases/test/index.html
+echo -e "<html>\n<head>\n<title>index</title>\n</head>\n<body>\nHolberton School\n</body>\n</html>" > /data/web_static/releases/test/index.html
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 sudo chown -R ubuntu /data/
 sudo chgrp -R ubuntu /data/
