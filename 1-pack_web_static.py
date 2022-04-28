@@ -2,6 +2,7 @@
 """ Fabric script that generates a .tgz archive from the contents of the web_static """
 from datetime import datetime
 from fabric.api import local
+from os.path import isdir ,exists
 
 
 def do_pack:
@@ -13,6 +14,9 @@ def do_pack:
                                                              dt.hour,
                                                              dt.minute,
                                                              dt.second)
-    if local("tar -cvzf {} web_static".format(filepath)).failed is True:
-        return None
-    return filepath
+    if isdir("versions") is False:
+        local("mkdir versions")    
+    local("tar -cvzf {} web_static".format(filepath))
+    if exists(filepath):
+        return filepath
+    return None
