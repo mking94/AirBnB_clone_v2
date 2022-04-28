@@ -8,7 +8,7 @@ from fabric.api import put, run, env, local
 env.hosts = ['34.73.100.15', '184.72.175.91']
 
 
-def deploy(archive_path):
+def do_deploy(archive_path):
     """ Function that distribute an archive to a server """
     if path.isfile(archive_path) is False:
         return False
