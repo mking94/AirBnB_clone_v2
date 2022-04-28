@@ -9,7 +9,7 @@ from os.path import isdir, exists
 
 def do_pack:
     """ generates a tgz archive """
-    
+
     dt = datetime.utcnow()
     dt_str = "{}{}{}{}{}{}".format(
         dt.year,
