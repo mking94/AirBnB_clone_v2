@@ -7,7 +7,7 @@ def index():
     """ Print Hello HBNB"""
     return 'Hello HBNB!'
 
-@app.hbnb('/hbnb')
+@app.hbnb('/hbnb',strict_slashes = False)
 def hbnb():
     """ Print HBNB"""
     return 'HBNB'
