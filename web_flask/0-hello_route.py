@@ -2,10 +2,10 @@
 """ Python script that starts a Flask web application """
 from flask import Flask
 app = Flask(__name__)
-@app.index('/')
+@app.route('/',strict_slashes = False)
 def index():
-    app.url_map.strict_slashes = False
+    """ Print Hello HBNB"""
     return 'Hello HBNB!'
 
 if __name__ == '__main__':
-      app.run(host="0.0.0.0", port=5000, debug=True)
+      app.run(host="0.0.0.0", port=5000)
