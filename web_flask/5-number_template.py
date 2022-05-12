@@ -39,7 +39,7 @@ def num_temp(n):
     """ Print number in html code 
     or redirect to 404 error """
     if(n.isnumeric()):
-        return render_template("5-number.html")
+        return render_template("5-number.html", value=n)
     abort(404)
 if __name__ == '__main__':
       app.run(host="0.0.0.0", port=5000)
