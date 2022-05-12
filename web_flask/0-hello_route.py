@@ -6,6 +6,10 @@ app = Flask(__name__)
 def index():
     """ Print Hello HBNB"""
     return 'Hello HBNB!'
+@app.hbnb('/hbnb')
+def hbnb():
+    """ Print HBNB"""
+    return 'HBNB'
 
 if __name__ == '__main__':
       app.run(host="0.0.0.0", port=5000)
