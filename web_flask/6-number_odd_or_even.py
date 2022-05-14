@@ -53,10 +53,9 @@ def num_temp(n):
 
 @app.route('/number_odd_or_even/<n>', strict_slashes=False)
 def num_type(n):
-    """ Print number in html code
+    """ Print number odd or even in html code
     or redirect to 404 error """
     if(n.isnumeric()):
-        return render_template("5-number.html", value=n)
         if(int(n) % 2 == 0):
             param = '{} is odd'.format(n)
             return render_template("6-number_odd_or_even.html", value=param)
