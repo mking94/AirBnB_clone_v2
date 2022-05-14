@@ -38,7 +38,7 @@ def python(text):
 def num(n):
     """ Print number or redirect to 404 error """
     if(n.isnumeric()):
-        return '{:d} is number'.format(n)
+        return '{} is a number'.format(n)
     abort(404)
 
 
