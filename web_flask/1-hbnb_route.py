@@ -10,7 +10,7 @@ def index():
     return 'Hello HBNB!'
 
 
-@app.hbnb('/hbnb', strict_slashes=False)
+@app.route('/hbnb', strict_slashes=False)
 def hbnb():
     """ Print HBNB"""
     return 'HBNB'
