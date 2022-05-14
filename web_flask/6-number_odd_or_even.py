@@ -57,10 +57,10 @@ def num_type(n):
     or redirect to 404 error """
     if(n.isnumeric()):
         if(int(n) % 2 == 0):
-            param = '{} is odd'.format(n)
+            param = '{} is even'.format(n)
             return render_template("6-number_odd_or_even.html", value=param)
         else:
-            param = '{} is even'.format(n)
+            param = '{} is odd'.format(n)
             return render_template("6-number_odd_or_even.html", value=param)
     abort(404)
 
