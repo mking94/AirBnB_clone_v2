@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 """Defines the State class."""
+from sqlalchemy import Column, String, ForeignKey
+import sqlalchemy
+from models.base_model import BaseModel, Base
 import models
 from os import getenv
 from models.base_model import Base
@@ -20,14 +23,10 @@ class State(BaseModel, Base):
     """
     __tablename__ = "states"
     name = Column(String(128), nullable=False)
+
+
   #!/usr/bin/python3
 """ State Module for HBNB project """
-import models
-from models.base_model import BaseModel, Base
-from models.city import City
-import sqlalchemy
-from sqlalchemy import Column, String, ForeignKey
-from sqlalchemy.orm import relationship
 
 
 class State(BaseModel, Base):
@@ -54,7 +53,7 @@ class State(BaseModel, Base):
             for value in all_inst_c.values():
                 if value.state_id == self.id:
                     list_city.append(value)
-            return   cities = relationship("City",  backref="state", cascade="delete")
+            return cities = relationship("City", backref="state", cascade="delete")
 
     if getenv("HBNB_TYPE_STORAGE") != "db":
         @property
